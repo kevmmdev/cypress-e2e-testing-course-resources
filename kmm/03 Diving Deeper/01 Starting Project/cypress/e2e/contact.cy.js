@@ -34,22 +34,19 @@ describe("contact form", () => {
     cy.get("@msgInput").focus().blur();
     cy.get("@msgInput")
       .parent()
-      .then((el) => {
-        expect(el.attr("class")).to.contains("invalid");
-      });
+      .should("have.attr", "class")
+      .and("match", /invalid/);
 
     cy.get('[data-cy="contact-input-name"]').focus().blur();
     cy.get('[data-cy="contact-input-name"]')
       .parent()
-      .then((el) => {
-        expect(el.attr("class")).to.contains("invalid");
-      });
+      .should("have.attr", "class")
+      .and("match", /invalid/);
 
     cy.get('[data-cy="contact-input-email"]').focus().blur();
     cy.get('[data-cy="contact-input-email"]')
       .parent()
-      .then((el) => {
-        expect(el.attr("class")).to.contains("invalid");
-      });
+      .should("have.attr", "class")
+      .and("match", /invalid/);
   });
 });
