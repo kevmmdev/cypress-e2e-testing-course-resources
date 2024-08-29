@@ -16,6 +16,8 @@ describe("share location", () => {
       cy.stub(win.navigator.clipboard, "writeText")
         .as("saveToClipboard")
         .resolves();
+      cy.spy(win.localStorage, "setItem").as("storeLocation");
+      cy.spy(win.localStorage, "getItem").as("getStoredLocation");
     });
   });
 
@@ -26,7 +28,7 @@ describe("share location", () => {
     cy.get('[data-cy="actions"]').should("contain", "Location fetched");
   });
 
-  it("should share a location URL", () => {
+  it.only("should share a location URL", () => {
     cy.get('[data-cy="name-input"]').type("John Doe");
     cy.get('[data-cy="get-loc-btn"]').click();
     cy.get('[data-cy="share-loc-btn"]').click();
@@ -38,6 +40,15 @@ describe("share location", () => {
         "have.been.calledWithMatch",
         new RegExp(`${latitude}.*${longitude}.*${encodeURI("John Doe")}`)
       );
+
+      cy.get("@storeLocation").should(
+        "have.been.calledWithMatch",
+        /John Doe/,
+        new RegExp(`${latitude}.*${longitude}.*${encodeURI("John Doe")}`)
+      );
     });
+    cy.get("@storeLocation").should("have.been.called");
+    cy.get('[data-cy="share-loc-btn"]').click();
+    cy.get("@getStoredLocation").should("have.been.called");
   });
 });
