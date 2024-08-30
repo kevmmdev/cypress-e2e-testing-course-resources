@@ -1,12 +1,12 @@
 import {
   Takeaways_default,
   require_prisma
-} from "/build/_shared/chunk-NCK4QHKF.js";
+} from "/build/_shared/chunk-7HEMJNJU.js";
 import {
   Link,
   require_jsx_dev_runtime,
   useLoaderData
-} from "/build/_shared/chunk-EUAQIQ2W.js";
+} from "/build/_shared/chunk-UQSC3MFW.js";
 import {
   __toESM
 } from "/build/_shared/chunk-IU43IUTG.js";
@@ -69,4 +69,4 @@ function Index() {
 export {
   Index as default
 };
-//# sourceMappingURL=/build/routes/index-TVOWYNLJ.js.map
+//# sourceMappingURL=/build/routes/index-M4QPETU3.js.map
