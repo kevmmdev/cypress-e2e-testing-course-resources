@@ -6,7 +6,7 @@ import {
   Link,
   require_jsx_dev_runtime,
   useNavigate
-} from "/build/_shared/chunk-UQSC3MFW.js";
+} from "/build/_shared/chunk-2ZYMKXBN.js";
 import {
   __commonJS,
   __toESM
@@ -204,4 +204,4 @@ var new_default = NewTakewayRoute;
 export {
   new_default as default
 };
-//# sourceMappingURL=/build/routes/takeaways/new-5N7AHRFO.js.map
+//# sourceMappingURL=/build/routes/takeaways/new-PD46W6DX.js.map
